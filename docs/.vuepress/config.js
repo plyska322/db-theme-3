@@ -7,7 +7,7 @@ module.exports = {
       serviceWorker: true,
       updatePopup: true
     },
-    ,
+
     ['container', {
       type: 'vue',
       before: '<pre class="vue-container"><code>',
@@ -15,7 +15,7 @@ module.exports = {
     }]
   ],
   port: 3030,
-  base: '/docs/',
+  base: '/db-theme-3/',
   theme: 'cool',
   // dest: 'dist',
   head: [
@@ -76,7 +76,7 @@ module.exports = {
 
     lastUpdated: 'Останнє оновлення', // string | boolean
       // Assumes GitHub. Can also be a full GitLab url.
-    repo: 'https://github.com/boldak/edu-db-cw',
+    repo: 'https://github.com/Poluianov-Vladyslav/db-theme-3',
     // Customising the header label
     // Defaults to "GitHub"/"GitLab"/"Bitbucket" depending on `themeConfig.repo`
     repoLabel: 'Github',
@@ -95,8 +95,8 @@ module.exports = {
     // editLinkText: 'Ви можете покращити цю сторінку'
 
   },
-  title: 'Назва проєкту',
-  description: 'Курсова робота з дисципліни "Бази даних"',
+  title: 'Система аналізу медіа-контенту',
+  description: 'Лабораторна робота з дисципліни "Бази даних"',
   configureWebpack: {
     resolve: {
       alias: {
