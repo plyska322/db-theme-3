@@ -3,14 +3,27 @@ home: true
 actionText: Розпочати →
 actionLink: /intro/
 
-footer: "ECL 2.0 Licensed | Copyright © [YYYY] [Your Name]"
+footer: "ECL 2.0 Licensed | Copyright © 2024 Полуянов Владислав"
 ---
 
 
 **Виконав(-ла):** 
 
-*студент(-ка) 2-го курсу, групи (шифр групи)*<span padding-right:5em></span> **[ім’я ПРІЗВИЩЕ] [Посилання email, tg, fb]**
+*студенти 2-го курсу, групи ІО-21* 
 
+**Владислав Полуянов [vladpoluianov@gmail.com, @PoluianovV]**
+
+**Валерія Гриценко [krisdimond@gmail.com, @Your_Konserva]**
+
+**Микола Смаляний [kolyansmalian@gmail.com, @headmaxer]**
+
+**Андрій Фурсенко [andrfurs334@gmail.com, @andryhhaaa]**
+
+**Варя РЯбоконь [vararabokon673@gmail.com, @Varuhadvawuha]**
+
+**Тарас Плиска [p1yska.taras@gmail.com, @plyska322]**
+
+**Тарас Усатий [tarasusaty@gmail.com, @GuCaKa]**
 
 **Керівник**
 
