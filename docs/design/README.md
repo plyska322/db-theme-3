@@ -114,3 +114,82 @@ Export.time --* Export
 Export "0,*"---"1,1" History
 
 @enduml
+
+@startuml
+
+    entity Export <<ENTITY>>{ 
+        +Export.id: int
+        --
+        Export.isSuccess:bool
+        Export.time:datetime
+    }
+    
+    entity History <<ENTITY>> {
+        +History.id:int
+        --
+        History.name:string
+        History.time:datetime
+    }
+    
+    entity SupportRequest <<ENTITY>> {
+        +SupportRequest.id:int
+        --
+        SupportRequest.isAnswered:bool
+        SupportRequest.type:string
+    }
+    
+    entity adminAnswer <<ENTITY>> {
+        +adminAnswer.id:int
+        --
+        adminAnswer.text:string
+        adminAnswer.time:datetime
+    }
+    
+    entity userMessage <<ENTITY>>{ 
+        +userMessage.id:int
+        --
+        userMessage.text:string
+        userMessage.time:datetime
+    }
+    entity "Task" as task <<ENTITY>>{
+        +id: int
+        --
+        name: string
+        deadline: datatime
+        }
+        
+    entity "Client" as client <<ENTITY>>{
+        +id: int
+        --
+        name: string
+        name: string
+        mail: string
+        password: string
+        }
+        
+    entity "Role" as role <<ENTITY>>{
+        +id: int
+        --
+        name: string
+        permission: string
+        description: string
+        }
+        
+    entity "Request" as request <<ENTITY>>{
+        +id: int
+        --
+        name: string
+        time: datatime
+        description: string
+        }
+        
+    request "0,*"--"1,1" client
+    task "0,*"--"1,1" client
+    client "0,*"--"1,1" role
+    client "1,1"--"0,*" SupportRequest
+    History"1,1" -- "0,*"request
+    Export"0,*" -- "1,1"History
+    History"1,1"--"0,*" SupportRequest
+    SupportRequest "1,1"--"1,1" adminAnswer
+    SupportRequest "1,1"--"1,1" userMessage
+@enduml
