@@ -178,7 +178,7 @@ namespace AccesControl {
         permission: string
         description: string
         }
-        entity "Request" as request <<ENTITY>>{
+    entity "Request" as request <<ENTITY>>{
         +id: int
         --
         name: string
