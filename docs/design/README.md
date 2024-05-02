@@ -116,21 +116,22 @@ Export "0,*"---"1,1" History
 @enduml
 
 @startuml
-
+namespace HistoryManagement {  
     entity Export <<ENTITY>>{ 
         +Export.id: int
         --
         Export.isSuccess:bool
         Export.time:datetime
     }
-    
+   
     entity History <<ENTITY>> {
         +History.id:int
         --
         History.name:string
         History.time:datetime
     }
-    
+}
+namespace SupportManagement {   
     entity SupportRequest <<ENTITY>> {
         +SupportRequest.id:int
         --
@@ -151,13 +152,16 @@ Export "0,*"---"1,1" History
         userMessage.text:string
         userMessage.time:datetime
     }
+}
+namespace TaskManagement {
     entity "Task" as task <<ENTITY>>{
         +id: int
         --
         name: string
         deadline: datatime
         }
-        
+}
+namespace AccesControl {        
     entity "Client" as client <<ENTITY>>{
         +id: int
         --
@@ -174,14 +178,14 @@ Export "0,*"---"1,1" History
         permission: string
         description: string
         }
-        
-    entity "Request" as request <<ENTITY>>{
+        entity "Request" as request <<ENTITY>>{
         +id: int
         --
         name: string
         time: datatime
         description: string
         }
+}        
         
     request "0,*"--"1,1" client
     task "0,*"--"1,1" client
