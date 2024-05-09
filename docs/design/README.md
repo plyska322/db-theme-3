@@ -114,7 +114,7 @@ Export.time --* Export
 Export "0,*"---"1,1" History
 
 @enduml
-
+## ER-модель
 @startuml
 namespace HistoryManagement {  
     entity Export <<ENTITY>>{ 
@@ -197,3 +197,7 @@ namespace AccesControl {
     SupportRequest "1,1"--"1,1" adminAnswer
     SupportRequest "1,1"--"1,1" userMessage
 @enduml
+
+## Реляційна схема
+
+<img src="./media/for_lab4.jpg">
