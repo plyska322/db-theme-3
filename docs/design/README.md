@@ -89,7 +89,7 @@ userMessage.id --* userMessage
 userMessage.text --* userMessage
 userMessage.time -l-* userMessage
 
-userMessage "1,1"-l--"1,1" SupportRequest
+userMessage "0,*"-l--"1,1" SupportRequest
 
 entity adminAnswer
 entity adminAnswer.id
@@ -100,7 +100,7 @@ adminAnswer.id --* adminAnswer
 adminAnswer.text --* adminAnswer
 adminAnswer.time --* adminAnswer
 
-adminAnswer "1,1"---"1,1" SupportRequest
+adminAnswer "0,*"---"1,1" SupportRequest
 
 entity Export
 entity Export.id
@@ -196,8 +196,8 @@ namespace AccesControl {
     History"1,1" -- "0,*"request
     Export"0,*" -- "1,1"History
     History"1,1"--"0,*" SupportRequest
-    SupportRequest "1,1"--"1,1" adminAnswer
-    SupportRequest "1,1"--"1,1" userMessage
+    SupportRequest "1,1"--"0,*" adminAnswer
+    SupportRequest "1,1"--"0,*" userMessage
 @enduml
 
 ## Реляційна схема
