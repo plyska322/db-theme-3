@@ -107,9 +107,10 @@ CREATE TABLE IF NOT EXISTS `db-theme-3`.`Task` (
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
 ENGINE = InnoDB;
-    DROP TABLE IF EXISTS `db-theme-3`.`Request` ;
+
+DROP TABLE IF EXISTS `db-theme-3`.`Request` ;
     
-    CREATE TABLE IF NOT EXISTS `db-theme-3`.`Request` (
+CREATE TABLE IF NOT EXISTS `db-theme-3`.`Request` (
       `id` INT NOT NULL,
       `name` VARCHAR(45) NULL,
       `time` TIME NULL,
@@ -127,8 +128,8 @@ ENGINE = InnoDB;
         REFERENCES `db-theme-3`.`Client` (`id`)
         ON DELETE NO ACTION
         ON UPDATE NO ACTION)
-    ENGINE = InnoDB;
-    ENGINE = InnoDB;
+ENGINE = InnoDB;
+ENGINE = InnoDB;
 
 
     DROP TABLE IF EXISTS `db-theme-3`.`Client` ;
@@ -202,16 +203,41 @@ INSERT INTO `db-theme-3`.`Export` (`Export.id`, `Export.isSuccess`, Export.time)
     
 COMMIT;
 START TRANSACTION;
-    USE `db-theme-3`;
-    INSERT INTO `db-theme-3`.`History` (`History.id`, `History.name`, History.time) VALUES (1, 'History 1', 2024-3-26);  
-    
-    COMMIT;
+USE `db-theme-3`;
+INSERT INTO `db-theme-3`.`History` (`History.id`, `History.name`, History.time) VALUES (1, 'History 1', 2024-3-26);     
+COMMIT;
+
 START TRANSACTION;
 USE `db-theme-3`;
 INSERT INTO `db-theme-3`.`Task` (`Task.id`, `Task.name`, `Task.deadline`) VALUES (1, 'Task1', '2024-3-26');
 INSERT INTO `db-theme-3`.`Task` (`Task.id`, `Task.name`, `Task.deadline`) VALUES (2, 'Task2', '2024-4-26');
 INSERT INTO `db-theme-3`.`Task` (`Task.id`, `Task.name`, `Task.deadline`) VALUES (3, 'Task3', '2024-5-26');
 COMMIT;
+
+START TRANSACTION;
+USE `db-theme-3`;
+INSERT INTO `db-theme-3`.`SupportRequest` (`SupportRequest.id`, `SupportRequest.isAnswered`, `SupportRequest.type`) VALUES (1, 'True', '2024-2-26');
+INSERT INTO `db-theme-3`.`SupportRequest` (`SupportRequest.id`, `SupportRequest.isAnswered`, `SupportRequest.type`) VALUES (2, 'True', '2024-5-21');
+INSERT INTO `db-theme-3`.`SupportRequest` (`SupportRequest.id`, `SupportRequest.isAnswered`, `SupportRequest.type`) VALUES (3, 'True', '2024-8-18');
+COMMIT;
+CREATE TABLE IF NOT EXISTS `db-theme-3`.`SupportRequest` (
+    `SupportRequest.id` INT NOT NULL PRIMARY KEY,
+    `SupportRequest.isAnswered` BOOLEAN,
+    `SupportRequest.type` VARCHAR(45) NOT NULL,
+    INDEX `fk_SupportRequest_Client_idx` (`Client_Client.id` ASC) VISIBLE,
+    CONSTRAINT `fk_SupportRequest_Client`
+        FOREIGN KEY (`Client_Client.id`)
+        REFERENCES `db-theme-3`.`Client` (`id`)
+        ON DELETE NO ACTION
+        ON UPDATE NO ACTION
+    INDEX `fk_SupportRequest_History_idx` (`History_History.id` ASC) VISIBLE,
+    CONSTRAINT `fk_SupportRequest_History`
+        FOREIGN KEY (`History_History.id`)
+        REFERENCES `db-theme-3`.`History` (`History.id`)
+        ON DELETE NO ACTION
+        ON UPDATE NO ACTION))
+);
+ENGINE = InnoDB;
 ```
 
 
