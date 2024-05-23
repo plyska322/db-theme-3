@@ -220,24 +220,7 @@ INSERT INTO `db-theme-3`.`SupportRequest` (`SupportRequest.id`, `SupportRequest.
 INSERT INTO `db-theme-3`.`SupportRequest` (`SupportRequest.id`, `SupportRequest.isAnswered`, `SupportRequest.type`) VALUES (2, 'True', '2024-5-21');
 INSERT INTO `db-theme-3`.`SupportRequest` (`SupportRequest.id`, `SupportRequest.isAnswered`, `SupportRequest.type`) VALUES (3, 'True', '2024-8-18');
 COMMIT;
-CREATE TABLE IF NOT EXISTS `db-theme-3`.`SupportRequest` (
-    `SupportRequest.id` INT NOT NULL PRIMARY KEY,
-    `SupportRequest.isAnswered` BOOLEAN,
-    `SupportRequest.type` VARCHAR(45) NOT NULL,
-    INDEX `fk_SupportRequest_Client_idx` (`Client_Client.id` ASC) VISIBLE,
-    CONSTRAINT `fk_SupportRequest_Client`
-        FOREIGN KEY (`Client_Client.id`)
-        REFERENCES `db-theme-3`.`Client` (`id`)
-        ON DELETE NO ACTION
-        ON UPDATE NO ACTION
-    INDEX `fk_SupportRequest_History_idx` (`History_History.id` ASC) VISIBLE,
-    CONSTRAINT `fk_SupportRequest_History`
-        FOREIGN KEY (`History_History.id`)
-        REFERENCES `db-theme-3`.`History` (`History.id`)
-        ON DELETE NO ACTION
-        ON UPDATE NO ACTION))
-);
-ENGINE = InnoDB;
+
 ```
 
 
